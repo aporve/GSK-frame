@@ -3,7 +3,7 @@
         var iFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];         
         var modularBars = document.createElement('script');
         modularBars.type = 'text/javascript';
-        modularBars.src = 'https://staging.yellowmessenger.com/components/public/webviews/vanguard/assets/js/addFrame.js';
+        modularBars.src = 'https://aporve.github.io/GSK/addFrame.js';
         iFrameHead.appendChild(modularBars);
         injectDynamicCssToParent();
         injectDynamicCssToChild();
