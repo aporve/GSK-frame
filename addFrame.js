@@ -10,7 +10,7 @@
         `<div class="mod-head-side-bar-container">
            <div class="overflow-container-sidebar">
                <ul class="sidebar-wrapper">
-                  <iframe src="https://aporve.github.io/gsk/index.html"></iframe>
+                  <img style="width:100%; height:100%" src="https://cdn.yellowmessenger.com/2MNdjxTsKpyT1655467091956.png">
                </ul>
            </div>
            </div> ` 
