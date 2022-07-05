@@ -43,26 +43,26 @@ function injectDynamicCssToParent() {
 }
 
 window.addEventListener('message', function(eventData) {
-    // console.log('eventData---', eventData);
-    let parsedData = JSON.parse(eventData.data)
-    console.log('parsedData~~~~~~~~~>',parsedData)
-    if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "welcome") {
-        console.log('Custom JS: Welcome');
-        document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
-          event_code: 'welcome',
-          data: 'data'
-      }), '*');
-      return;
-    }
-
-    if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "terms_and_conditions") {
-      console.log('Custom JS: Terms and Conditions');
+  // console.log('eventData---', eventData);
+  let parsedData = JSON.parse(eventData.data)
+  console.log('parsedData~~~~~~~~~>',parsedData)
+  if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "welcome") {
+      console.log('Custom JS: Welcome');
       document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
-        event_code: 'terms_and_conditions',
+        event_code: 'welcome',
         data: 'data'
     }), '*');
     return;
   }
+
+  if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "terms_and_conditions") {
+    console.log('Custom JS: Terms and Conditions');
+    document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+      event_code: 'terms_and_conditions',
+      data: 'data'
+  }), '*');
+  return;
+}
     
 }, false);
 

@@ -27,10 +27,18 @@ window.addEventListener('message', function(eventData) {
     console.log('parsedData~~~~~~~~~>',parsedData)
     if(parsedData.event_code === "welcome" && parsedData.data) {
         console.log('Successfull Event passed addFrame: Welcome');
+        document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
+            event_code: 'pass-event-iframe',
+            data: 'welcome'
+        }), '*');
     }
 
     if(parsedData.event_code === "terms_and_conditions" && parsedData.data) {
         console.log('Successfull Event passed addFrame: terms and condition');
+        document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
+            event_code: 'pass-event-iframe',
+            data: 'terms and condition'
+        }), '*');
     }
     
 }, false);
