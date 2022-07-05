@@ -43,187 +43,192 @@ function injectDynamicCssToParent() {
 }
 
 window.addEventListener('message', function(eventData) {
-    console.log('onload---->')
-    console.log(eventData);
-    try{
-
-        console.error( 'Data----------------->>>',eventData.data);
-        if(eventData.data == 'VEMO') {
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "VEMO",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-
-        if(eventData.data == 'ACTIVE') {
-            console.log('In Custom js')
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "ACTIVE",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-        if(eventData.data == 'ASSET') {
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "ASSET",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-        if(eventData.data == 'ECON') {
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "ECON",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-        if(eventData.data == 'INVESTOR') {
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "INVESTOR",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-
-        if(eventData.data == 'ISG') {
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "ISG",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-        if(eventData.data == 'RETIREMENT') {
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "RETIREMENT",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-        if(eventData.data == 'STRAT-COM') {
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "STRAT-COM",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-        if(eventData.data == 'VCMM') {
-            document.getElementById('ymIframe').contentWindow.postMessage({
-                event_code: 'ym-client-event',
-                data: {
-                    event: {
-                     code: "VCMM",
-                     data: ""
-                    }
-                }
-           }, '*');
-           return;
-        }
-
-        
-
-        if(eventData.data == 'CLOSE') {
-            window.YellowMessengerPlugin.closeBot();
-        }
-
-
-        if(eventData.data == 'Maxamize') {
-            (function injectJS() {
-                try {        
-                    var parentCssHead = document.head || document.getElementsByTagName('head')[0];
-                    var parentStyles = document.createElement('style');
-                    parentStyles.type = 'text/css';
-
-                    var parentCssStyles = '#ymFrameHolder { width: 100%; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 880px; } .cards.slick-initialized .slick-slide {height: auto;border-radius: 10px;position: relative;margin-bottom: 10px;overflow: hidden;/* width: 300px; */max-width: none; min-width: none; display: inline-block !important;width: 700px;padding-bottom: 0px !important;margin-right: 10px !important;box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 10%) 0px 0px 1px 0px !important;} }';
-
-                    if (parentStyles.styleSheet) {
-                    parentStyles.styleSheet.cssText = parentCssStyles;
-                    } else {
-                    parentStyles.appendChild(document.createTextNode(parentCssStyles));
-                    }
-                    parentCssHead.appendChild(parentStyles);
-                } catch(e) {
-                    console.error("failed while inserting to iFrame", e);
-                }
-            })();
-        }
-
-
-        if(eventData.data == 'MINIMIZE') {
-            (function injectJS() {
-                try {        
-                    var parentCssHead = document.head || document.getElementsByTagName('head')[0];
-                    var parentStyles = document.createElement('style');
-                    parentStyles.type = 'text/css';
-
-                    var parentCssStyles = '#ymFrameHolder { width: 100%; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 440px; } }';
-                    if (parentStyles.styleSheet) {
-                    parentStyles.styleSheet.cssText = parentCssStyles;
-                    } else {
-                    parentStyles.appendChild(document.createTextNode(parentCssStyles));
-                    }
-                    parentCssHead.appendChild(parentStyles);
-                } catch(e) {
-                    console.error("failed while inserting to iFrame", e);
-                }
-            })();
-        }
-
-        // if(eventData.data == 'MINIMIZE') {
-        //     document.getElementById('ymIframe').style.display ="none"
-        // }
-        
-    }catch(error){
-        console.log(error);
-        return;
-    }
+    console.log('eventData---', eventData);
     
 }, false);
+
+// window.addEventListener('message', function(eventData) {
+//     console.log('onload---->')
+//     console.log(eventData);
+//     try{
+
+//         console.error( 'Data----------------->>>',eventData.data);
+//         if(eventData.data == 'VEMO') {
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "VEMO",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+
+//         if(eventData.data == 'ACTIVE') {
+//             console.log('In Custom js')
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "ACTIVE",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+//         if(eventData.data == 'ASSET') {
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "ASSET",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+//         if(eventData.data == 'ECON') {
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "ECON",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+//         if(eventData.data == 'INVESTOR') {
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "INVESTOR",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+
+//         if(eventData.data == 'ISG') {
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "ISG",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+//         if(eventData.data == 'RETIREMENT') {
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "RETIREMENT",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+//         if(eventData.data == 'STRAT-COM') {
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "STRAT-COM",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+//         if(eventData.data == 'VCMM') {
+//             document.getElementById('ymIframe').contentWindow.postMessage({
+//                 event_code: 'ym-client-event',
+//                 data: {
+//                     event: {
+//                      code: "VCMM",
+//                      data: ""
+//                     }
+//                 }
+//            }, '*');
+//            return;
+//         }
+
+        
+
+//         if(eventData.data == 'CLOSE') {
+//             window.YellowMessengerPlugin.closeBot();
+//         }
+
+
+//         if(eventData.data == 'Maxamize') {
+//             (function injectJS() {
+//                 try {        
+//                     var parentCssHead = document.head || document.getElementsByTagName('head')[0];
+//                     var parentStyles = document.createElement('style');
+//                     parentStyles.type = 'text/css';
+
+//                     var parentCssStyles = '#ymFrameHolder { width: 100%; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 880px; } .cards.slick-initialized .slick-slide {height: auto;border-radius: 10px;position: relative;margin-bottom: 10px;overflow: hidden;/* width: 300px; */max-width: none; min-width: none; display: inline-block !important;width: 700px;padding-bottom: 0px !important;margin-right: 10px !important;box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 10%) 0px 0px 1px 0px !important;} }';
+
+//                     if (parentStyles.styleSheet) {
+//                     parentStyles.styleSheet.cssText = parentCssStyles;
+//                     } else {
+//                     parentStyles.appendChild(document.createTextNode(parentCssStyles));
+//                     }
+//                     parentCssHead.appendChild(parentStyles);
+//                 } catch(e) {
+//                     console.error("failed while inserting to iFrame", e);
+//                 }
+//             })();
+//         }
+
+
+//         if(eventData.data == 'MINIMIZE') {
+//             (function injectJS() {
+//                 try {        
+//                     var parentCssHead = document.head || document.getElementsByTagName('head')[0];
+//                     var parentStyles = document.createElement('style');
+//                     parentStyles.type = 'text/css';
+
+//                     var parentCssStyles = '#ymFrameHolder { width: 100%; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 440px; } }';
+//                     if (parentStyles.styleSheet) {
+//                     parentStyles.styleSheet.cssText = parentCssStyles;
+//                     } else {
+//                     parentStyles.appendChild(document.createTextNode(parentCssStyles));
+//                     }
+//                     parentCssHead.appendChild(parentStyles);
+//                 } catch(e) {
+//                     console.error("failed while inserting to iFrame", e);
+//                 }
+//             })();
+//         }
+
+//         // if(eventData.data == 'MINIMIZE') {
+//         //     document.getElementById('ymIframe').style.display ="none"
+//         // }
+        
+//     }catch(error){
+//         console.log(error);
+//         return;
+//     }
+    
+// }, false);
