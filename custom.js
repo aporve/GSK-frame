@@ -45,7 +45,8 @@ function injectDynamicCssToParent() {
 window.addEventListener('message', function(eventData) {
   // console.log('eventData---', eventData);
   let parsedData = JSON.parse(eventData.data)
-  console.log('parsedData~~~~~~~~~>',parsedData)
+  console.log('custom js: parsedData~~~~~~~~~>',parsedData);
+  console.log('Custom js:parsedData.data~~~~~~~~~~~~>>', parsedData.data);
   if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "welcome") {
       console.log('Custom JS: Welcome');
       document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
