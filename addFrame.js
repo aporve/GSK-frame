@@ -21,6 +21,16 @@
            } 
 })(); 
 
+window.addEventListener('message', function(eventData) {
+    // console.log('eventData---', eventData);
+    let parsedData = JSON.parse(eventData.data)
+    console.log('parsedData~~~~~~~~~>',parsedData)
+    if(parsedEventData.event_code === "user_clicked_login1" && parsedEventData.data) {
+        console.log('Successfull Event passed: user_clicked_login1')
+    }
+    
+}, false);
+
 // function dynamicHeaderTitle(e) { 
 //    e.preventDefault(); 
 //    var title = e.srcElement.getAttribute("title"); 

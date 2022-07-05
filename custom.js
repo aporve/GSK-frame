@@ -48,6 +48,11 @@ window.addEventListener('message', function(eventData) {
     console.log('parsedData~~~~~~~~~>',parsedData)
     if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "user_clicked_login") {
         console.log('user_clicked_login: Event capture successfully');
+        document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+          event_code: 'user_clicked_login1',
+          data: 'data'
+      }), '*');
+      return;
     }
     
 }, false);
