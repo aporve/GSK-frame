@@ -25,7 +25,7 @@ window.addEventListener('message', function(eventData) {
     // console.log('eventData---', eventData);
     let parsedData = JSON.parse(eventData.data)
     console.log('parsedData~~~~~~~~~>',parsedData);
-    console.log('Custom js:parsedData.data~~~~~~~~~~>>', parsedData.data)
+    console.log('addFrame :parsedData.data~~~~~~~~~~>>', parsedData.data)
     if(parsedData.event_code === "welcome" && parsedData.data) {
         console.log('Successfull Event passed addFrame: Welcome');
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
