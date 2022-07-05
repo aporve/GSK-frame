@@ -43,8 +43,10 @@ function injectDynamicCssToParent() {
 }
 
 window.addEventListener('message', function(eventData) {
-    console.log('eventData---', eventData);
-    if(eventData.data == 'user_clicked_login')  {
+    // console.log('eventData---', eventData);
+    let parsedData = JSON.parse(eventData.data)
+    console.log('parsedData~~~~~~~~~>',parsedData)
+    if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "user_clicked_login") {
         console.log('user_clicked_login: Event capture successfully');
     }
     
