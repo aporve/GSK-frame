@@ -25,8 +25,12 @@ window.addEventListener('message', function(eventData) {
     // console.log('eventData---', eventData);
     let parsedData = JSON.parse(eventData.data)
     console.log('parsedData~~~~~~~~~>',parsedData)
-    if(parsedData.event_code === "user_clicked_login1" && parsedData.data) {
-        console.log('Successfull Event passed: user_clicked_login1')
+    if(parsedData.event_code === "welcome" && parsedData.data) {
+        console.log('Successfull Event passed addFrame: Welcome');
+    }
+
+    if(parsedData.event_code === "terms_and_conditions" && parsedData.data) {
+        console.log('Successfull Event passed addFrame: terms and condition');
     }
     
 }, false);
