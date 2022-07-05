@@ -46,12 +46,12 @@ window.addEventListener('message', function(eventData) {
   // console.log('eventData---', eventData);
   let parsedData = JSON.parse(eventData.data)
   console.log('custom js: parsedData~~~~~~~~~>',parsedData);
-  console.log('Custom js:parsedData.data~~~~~~~~~~~~>>', parsedData.data);
+  console.log('Custom js:parsedData.data~~~~~~~~~~~~>>', parsedData.data.data);
   if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "welcome") {
       console.log('Custom JS: Welcome');
       document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
         event_code: 'welcome',
-        data: 'data'
+        data: parsedData.data.data
     }), '*');
     return;
   }
@@ -60,7 +60,7 @@ window.addEventListener('message', function(eventData) {
     console.log('Custom JS: Terms and Conditions');
     document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
       event_code: 'terms_and_conditions',
-      data: 'data'
+      data: parsedData.data.data
   }), '*');
   return;
 }
