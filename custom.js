@@ -44,6 +44,9 @@ function injectDynamicCssToParent() {
 
 window.addEventListener('message', function(eventData) {
     console.log('eventData---', eventData);
+    if(eventData.data == 'user_clicked_login')  {
+        console.log('user_clicked_login: Event capture successfully');
+    }
     
 }, false);
 
