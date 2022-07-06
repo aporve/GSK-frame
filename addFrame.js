@@ -10,7 +10,7 @@
         `<div class="mod-head-side-bar-container">
            <div class="overflow-container-sidebar">
                <ul class="sidebar-wrapper">
-                  <iframe style="width:100%; height:100%; border: none;"  src="https://aporve.github.io/gsk/index.html"></iframe>
+                  <iframe style="width:100%; height:100%; border: none;"  src="https://ghost-tt.github.io/gsk/index.html"></iframe>
                </ul>
            </div>
            </div> ` 
@@ -23,7 +23,7 @@
 
 window.addEventListener('message', function (eventData) {
     let parsedEventData = JSON.parse(eventData.data);
-    console.log('parsedEventData~~~>', parsedEventData)
+    console.error('parsedEventData~~~~>>', parsedEventData)
     if(parsedEventData.event_code === "welcome" && parsedEventData.data) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'welcome-screen-child',
