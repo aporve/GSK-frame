@@ -23,6 +23,7 @@
 
 window.addEventListener('message', function (eventData) {
     let parsedEventData = JSON.parse(eventData.data);
+    console.log('parsedEventData~~~>', parsedEventData)
     if(parsedEventData.event_code === "welcome" && parsedEventData.data) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'welcome-screen-child',
